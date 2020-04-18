@@ -2,6 +2,9 @@ import unittest
 from user import User
 
 class TestUser(unittest.TestCase):
+    def tearDown(self):
+
+        User.user_list=[]
 
     def setUp(self):
 
