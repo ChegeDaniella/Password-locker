@@ -97,10 +97,11 @@ def main():
                         Password= input()
                     elif password == 'rp':
                         Passgenerate=''
-                        for i in range(1):
-                            x = random.randint(0,95)
+                        for i in range(14):
+                            x = random.randint(0,60)
                             Passgenerate += string.printable[x]
-                            Password = print(Passgenerate())   
+                            Password = Passgenerate
+                            
 
                     else: 
                         print("Please enter password.")
@@ -121,7 +122,7 @@ def main():
                         print('\n')
 
                         for Credentials in display_credentials():
-                            print(f"{Credentials.username}")
+                            print(f"{Credentials.username} {Credentials.password}")
 
                     else:
                         print("No user accounts found")  
