@@ -5,7 +5,7 @@ class TestCredential(unittest.TestCase):
 
     def setUp(self):
         
-        self.new_credential= Credentials("chege","123")
+        self.new_credential= Credentials("chege","123","chege@gmail.com")
 
     def tearDown(self):
 
@@ -15,6 +15,7 @@ class TestCredential(unittest.TestCase):
 
         self.assertEqual(self.new_credential.username,"chege")
         self.assertEqual(self.new_credential.password,"123")
+        self.assertEqual(self.new_credential.email,"chege@gmail.com")
 
     def test_save_credentials(self):
 
@@ -24,15 +25,15 @@ class TestCredential(unittest.TestCase):
     def test_save_multiple_credentials(self):
 
         self.new_credential.save_credentials()
-        test_credential = Credentials("Test","321")
+        test_credential = Credentials("Test","321","chege@gmail.com")
         test_credential.save_credentials()
         self.assertEqual(len(Credentials.credentials_list),2)    
         
 
-    def test_random_password(self):
+    # def test_random_password(self):
 
-        self.new_credential.generate_password() 
-        self.assertEqual(self.new_credential.password,"") 
+    #     self.new_credential.generate_password() 
+    #     self.assertEqual(self.new_credential.password,"") 
 
 if __name__ == '__main__':
     unittest.main()    
