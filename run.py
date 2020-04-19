@@ -27,10 +27,10 @@ def main():
         print('\n')
 
         while True:
-            print("Use these shortcuts: oc - to open a new account, dc - diplay accounts")
+            print("Use these shortcuts: oa - to open a new account, ea - input already exsisting accounts")
             path = input()
 
-            if path == 'oc':
+            if path == 'oa':
                 
                 print("Use this shortcuts : cu - create new account with your own password, dc - display") 
 
@@ -42,27 +42,23 @@ def main():
                 print("Please enter your preferred password...")
                 Password = input()
 
-    
-
                 #create and save user 
                 save_users(create_user(Username,Password))  
-                print(f"New user account {Username} {Password} has been created")   
+                print(f"New user account {Username}  has been created")   
                 print('\n')  
 
+                #display contacts
+            elif short_code == 'dc':
 
+                if display_user():
+                    print("Here is al list")
+                    print('\n')
 
+                    for User in display_user():
+                        print(f"{User.Username}")
 
-            # elif short_code == 'dc':
-
-            #     if display_user():
-            #         print("Here is al list")
-            #         print('\n')
-
-            #         for User in display_user():
-            #             print(f"{User.Username}")
-
-            #     else:
-            #         print("No user accounts found") 
+                else:
+                    print("No user accounts found") 
 if __name__ == '__main__':
             main()                   
 
