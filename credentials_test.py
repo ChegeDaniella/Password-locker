@@ -25,7 +25,7 @@ class TestCredential(unittest.TestCase):
     def test_save_multiple_credentials(self):
 
         self.new_credential.save_credentials()
-        test_credential = Credentials("Test","321","chege@gmail.com")
+        test_credential = Credentials("chege","123","chege@gmail.com")
         test_credential.save_credentials()
         self.assertEqual(len(Credentials.credentials_list),2)    
         
@@ -36,28 +36,21 @@ class TestCredential(unittest.TestCase):
     #     self.assertEqual(self.new_credential.password,"") 
 
     def test_find_by_username(self):
-        '''
-        test to check if we can find a contact by phone number and display information
-        '''
 
         self.new_credential.save_credentials()
-        test_credential = Credentials("Test","0711","test@user.com") # new contact
+        test_credential = Credentials("chege","123","chege@gmail.com") # new contact
         test_credential.save_credentials()
 
-        found_credential = Credentials.find_by_username("Test")
-
+        found_credential = Credentials.find_by_username("chege")
         self.assertEqual(found_credential.password,test_credential.password)
 
     def test_credential_exists(self):
-        '''
-        test to check if we can return a Boolean  if we cannot find the contact.
-        '''
 
         self.new_credential.save_credentials()
-        test_credential = Credentials("Test","0711","test@user.com") # new contact
+        test_credential = Credentials("chege","123","chege@gmail.com") # new contact
         test_credential.save_credentials()
 
-        credential_exists = Credentials.credential_exist("0711")    
+        credential_exists = Credentials.credential_exist("123")    
 
 if __name__ == '__main__':
     unittest.main()    

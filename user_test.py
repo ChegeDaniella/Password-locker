@@ -24,22 +24,15 @@ class TestUser(unittest.TestCase):
     def test_save_multiple_users(self):
 
         self.new_user.save_user()
-        test_user = User("Test","321")
+        test_user = User("chege","123")
         test_user.save_user()
         self.assertEqual(len(User.user_list),2)
-
-
-
-            
 
     # def test_find_user(self):
 
     #     self.new_user.save_user()
     #     test_user = User("Test","321")
     #     test_user.save_user()
-
-
-
 
 
 if __name__ == '__main__':

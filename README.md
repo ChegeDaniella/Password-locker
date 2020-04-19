@@ -11,8 +11,12 @@ The technologies used to create this application were the pyhton language and py
 1. You will first need to get the code onto your device ,this mght be achieved by either 2.pulling or downloading.
 2. When you have the code in your device you can be able to open it with any code editor 3.that   can be able to read python language
 3. Then open your terminal or command line in the exact folder the code is in and type in
+
+
     python3.6 __or the version specified__ ./run.py(this is the ile the main code is in)
 
 ### License
 Copyright 2020 Daniella Wangechi Chege
+
+
 [License](Password-Locker/License)

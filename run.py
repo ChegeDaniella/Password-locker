@@ -32,29 +32,25 @@ def save_users(user):
 
 # Function to save credentials
 def save_credentials(credentials):
-    '''
-    Function to save contact
-    '''
+    
     credentials.save_credentials()   
 
+#Function finds account using username
 def find_account(username):
-    '''
-    Function that finds a contact by number and returns the contact
-    '''
+  
     return Credentials.find_by_username(username)
 
+# Function cheks the exsisting credentials    
 def check_existing_credentials(username):
-    '''
-    Function that check if a contact exists with that number and return a Boolean
-    '''
+   
     return Credentials.credential_exist(username)
 
 
 def main():
-        print("Hello welcome to creating a new account.What iis your name?")
+        print("Hello welcome to creating a new account.What is your name?")
         user_name = input()
 
-        print(f"Hello{user_name}.Chose a path to take increating or opening your account")
+        print(f"Hello {user_name}.Chose a path to take in creating or opening your account")
         print('\n')
 
         while True:
@@ -63,7 +59,7 @@ def main():
 
             if path == 'oa':
                 
-                print("Use this shortcuts : cu - create new account with your own password, dc - display") 
+                print("Use this shortcuts : cu - create new account with your own password, dc - display credentials, ex - exit the application") 
 
                 short_code = input().lower()
                 if short_code == 'cu':
@@ -156,9 +152,6 @@ def main():
             else:
                 print("Please chose a path you want to follow") 
                    
-
-
-
 
 if __name__ == '__main__':
             main()                   

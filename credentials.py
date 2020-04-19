@@ -32,12 +32,12 @@ class Credentials:
     @classmethod
     def find_by_username(cls,username):
         '''
-        Method that takes in a number and returns a contact that matches that number.
+        Method that takes in a username and returns a account that matches that credentials.
 
         Args:
-            number: Phone number to search for
+            username: username to search for
         Returns :
-            Contact of person that matches the number.
+            Credentials of person that matches the usrname.
         '''
 
         for credentials in cls.credentials_list:
@@ -47,11 +47,11 @@ class Credentials:
     @classmethod
     def credential_exist(cls,username):
         '''
-        Method that checks if a contact exists from the contact list.
+        Method that checks if a username exists from the credentialslist.
         Args:
-            number: Phone number to search if it exists
+            username: username to search if it exists
         Returns :
-            Boolean: True or false depending if the contact exists
+            Boolean: True or false depending if theusername exists
         '''
         for credentials in cls.credentials_list:
             if credentials.username == username:
