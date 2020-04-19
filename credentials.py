@@ -29,3 +29,17 @@ class Credentials:
     #         print(password)
     #     return password
 
+    @classmethod
+    def find_by_username(cls,username):
+        '''
+        Method that takes in a number and returns a contact that matches that number.
+
+        Args:
+            number: Phone number to search for
+        Returns :
+            Contact of person that matches the number.
+        '''
+
+        for credentials in cls.credentials_list:
+            if credentials.username == username:
+                return credentials 

@@ -35,5 +35,18 @@ class TestCredential(unittest.TestCase):
     #     self.new_credential.generate_password() 
     #     self.assertEqual(self.new_credential.password,"") 
 
+    def test_find_by_username(self):
+        '''
+        test to check if we can find a contact by phone number and display information
+        '''
+
+        self.new_credential.save_credentials()
+        test_credential = Credentials("Test","0711","test@user.com") # new contact
+        test_credential.save_credentials()
+
+        found_credential = Credentials.find_by_username("Test")
+
+        self.assertEqual(found_credential.password,test_credential.password)
+
 if __name__ == '__main__':
     unittest.main()    

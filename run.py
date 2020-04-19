@@ -35,7 +35,14 @@ def save_credentials(credentials):
     '''
     Function to save contact
     '''
-    credentials.save_credentials()     
+    credentials.save_credentials()   
+
+def find_account(username):
+    '''
+    Function that finds a contact by number and returns the contact
+    '''
+    return Credentials.find_by_username(username)
+
 
 def main():
         print("Hello welcome to creating a new account.What iis your name?")
@@ -73,13 +80,13 @@ def main():
                         print('\n')
 
                         for User in display_user():
-                            print(f"{User.Username}")
+                            print(f"{User.Username} {User.Password}")
 
                     else:
                         print("No user accounts found") 
 
             elif path == 'ea':
-                print("Use this shortcuts : cu - create new account with your own password, dc - display") 
+                print("Use this shortcuts : cu - create new account, dc - display accounts, en - access your account") 
 
                 short_code = input().lower()
                 if short_code == 'cu':
@@ -95,24 +102,20 @@ def main():
                     if password == 'cp':
                         print("Create your own password.")
                         Password= input()
+
                     elif password == 'rp':
                         Passgenerate=''
                         for i in range(14):
                             x = random.randint(0,60)
                             Passgenerate += string.printable[x]
                             Password = Passgenerate
-                            
 
                     else: 
                         print("Please enter password.")
 
-
-                    # print("Please enter your preferred password...")
-                    # Password = input()
-
                     #create and save user 
                     save_credentials(create_credential(Username,Password,Email))  
-                    print(f"New user account {Username} {Password}  has been created")   
+                    print(f"New user account {Username} {Email} {Password}  has been created")   
                     print('\n') 
 
                 elif short_code == 'dc':
@@ -122,27 +125,19 @@ def main():
                         print('\n')
 
                         for Credentials in display_credentials():
-                            print(f"{Credentials.username} {Credentials.password}")
+                            print(f"{Credentials.username} {Credentials.Email} {Credentials.password}")
 
                     else:
-                        print("No user accounts found")  
+                        print("No user accounts found") 
+            else:
+                print("Please chose a path you want to follow")             
 
 
 
 if __name__ == '__main__':
             main()                   
 
-            # print("Use this short cuts to chose how to create a pass word.cp - create your own password,rp - a password to be generated ")   
-            #     password = input().lower() 
-
-            #    if password == 'cp':
-            #     print("Create your own password.")
-            #     Password= input()
-            # elif password == 'rp':
-            #     password = random.randint(0,50)   
-            #     Password=input() 
-            # else: 
-            #     print("Please enter password.")
+           
 
 
 
