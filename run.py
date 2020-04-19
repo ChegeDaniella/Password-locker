@@ -4,15 +4,20 @@ import random, string
 from credentials import Credentials
 
 def create_user(Username,Password):
+    '''
+    Function to create a new contact
+    '''
     new_user = User(Username,Password)
-    return new_user
+    return new_user    
 
 def display_user():
     return User.display_user() 
 
 def save_users(user):
-
-    User.save_user()
+    '''
+    Function to save contact
+    '''
+    user.save_user()   
 
 def main():
         print("Hello welcome to creating a new account.What iis your name?")
@@ -25,31 +30,27 @@ def main():
             print("Use these shortcuts: oc - to open a new account, dc - diplay accounts")
             path = input()
 
-            # if path == 'oc':
+            if path == 'oc':
                 
-            #     print("Use this shortcuts : cu - create new account with your own password, dc - display") 
+                print("Use this shortcuts : cu - create new account with your own password, dc - display") 
 
-            #     short_code = input().lower()
-            # if short_code == 'cu':
-            #     print("Please enter your prefered username...")
-            #     Username = input() 
+                short_code = input().lower()
+            if short_code == 'cu':
+                print("Please enter your prefered username...")
+                Username = input() 
 
-            #     print("Use this short cuts to chose how to create a pass word.cp - create your own password,rp - a password to be generated ")   
-            #     password = input().lower()
+                print("Please enter your preferred password...")
+                Password = input()
 
-            # if password == 'cp':
-            #     print("Create your own password.")
-            #     Password= input()
-            # elif password == 'rp':
-            #     password = random.randint(0,50)   
-            #     Password=input() 
-            # else: 
-            #         print("Please enter password.")
+    
+
+                #create and save user 
+                save_users(create_user(Username,Password))  
+                print(f"New user account {Username} {Password} has been created")   
+                print('\n')  
 
 
-            #         save_users(create_user(Username.password))#create and save user   
-            #         print(f"New user account {Username} {password} has been created")   
-            #         print('\n')  
+
 
             # elif short_code == 'dc':
 
@@ -63,9 +64,19 @@ def main():
             #     else:
             #         print("No user accounts found") 
 if __name__ == '__main__':
-            main()                    
+            main()                   
 
+            # print("Use this short cuts to chose how to create a pass word.cp - create your own password,rp - a password to be generated ")   
+            #     password = input().lower() 
 
+            #    if password == 'cp':
+            #     print("Create your own password.")
+            #     Password= input()
+            # elif password == 'rp':
+            #     password = random.randint(0,50)   
+            #     Password=input() 
+            # else: 
+            #     print("Please enter password.")
 
 
 
