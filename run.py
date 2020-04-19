@@ -148,9 +148,15 @@ def main():
                         print(f"Password.......{search_username.password}")
                         print(f"Email address.......{search_username.email}")
                     else:
-                        print("That contact does not exist")        
+                        print("That contact does not exist")   
+                elif short_code == 'ex':
+                     print("Thank you for using our application.Goodbye. ")
+                break
+
             else:
-                print("Please chose a path you want to follow")             
+                print("Please chose a path you want to follow") 
+                   
+
 
 
 
