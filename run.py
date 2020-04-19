@@ -89,12 +89,29 @@ def main():
                     print("Please enter your email address...")
                     Email = input()
 
-                    print("Please enter your preferred password...")
-                    Password = input()
+                    print("Use this short cuts to chose how to create a pass word.cp - create your own password,rp - a password to be generated ")   
+                    password = input().lower()
+
+                    if password == 'cp':
+                        print("Create your own password.")
+                        Password= input()
+                    elif password == 'rp':
+                        Passgenerate=''
+                        for i in range(1):
+                            x = random.randint(0,95)
+                            Passgenerate += string.printable[x]
+                            Password = print(Passgenerate())   
+
+                    else: 
+                        print("Please enter password.")
+
+
+                    # print("Please enter your preferred password...")
+                    # Password = input()
 
                     #create and save user 
                     save_credentials(create_credential(Username,Password,Email))  
-                    print(f"New user account {Username}  has been created")   
+                    print(f"New user account {Username} {Password}  has been created")   
                     print('\n') 
 
                 elif short_code == 'dc':
