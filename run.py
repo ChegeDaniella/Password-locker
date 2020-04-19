@@ -43,6 +43,12 @@ def find_account(username):
     '''
     return Credentials.find_by_username(username)
 
+def check_existing_credentials(username):
+    '''
+    Function that check if a contact exists with that number and return a Boolean
+    '''
+    return Credentials.credential_exist(username)
+
 
 def main():
         print("Hello welcome to creating a new account.What iis your name?")
@@ -129,6 +135,20 @@ def main():
 
                     else:
                         print("No user accounts found") 
+                elif short_code == 'en':
+
+                    print("Please enter your username")
+                    search_username = input()
+
+                    if check_existing_credentials(search_username):
+                        search_username = find_account(search_username)
+                        print(f"{search_username.username} ")
+                        print('-' * 20)
+
+                        print(f"Password.......{search_username.password}")
+                        print(f"Email address.......{search_username.email}")
+                    else:
+                        print("That contact does not exist")        
             else:
                 print("Please chose a path you want to follow")             
 
