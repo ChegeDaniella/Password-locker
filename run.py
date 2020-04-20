@@ -45,6 +45,12 @@ def check_existing_credentials(username):
    
     return Credentials.credential_exist(username)
 
+#function for deleteing
+def delete_selected_credentials(username):
+
+    return username.delete_credentials()
+
+
 
 def main():
         print("Hello welcome to creating a new account.What is your name?")
@@ -88,7 +94,7 @@ def main():
                         print("No user accounts found") 
 
             elif path == 'ea':
-                print("Use this shortcuts : cu - create new account, dc - display accounts, en - access your account") 
+                print("Use this shortcuts : cu - create new account, dc - display accounts, en - access your account,del - delete an account, ex - exit the application") 
 
                 short_code = input().lower()
                 if short_code == 'cu':
@@ -106,6 +112,7 @@ def main():
                         Password= input()
 
                     elif password == 'rp':
+                        print("Find below your generated password next to your username.")
                         Passgenerate=''
                         for i in range(14):
                             x = random.randint(0,60)
@@ -144,7 +151,17 @@ def main():
                         print(f"Password.......{search_username.password}")
                         print(f"Email address.......{search_username.email}")
                     else:
-                        print("That contact does not exist")   
+                        print("That contact does not exist")  
+
+                elif short_code == 'del':
+                    print("Please enter the username of the account you want to delete")  
+                    delete = input()
+                    if check_existing_credentials(delete):
+                        get_delete =  delete_selected_credentials(delete)
+                        print(f"{get_delete.delete} has been deleted")
+                    else:
+                        print("Could not find your account.")   
+
                 elif short_code == 'ex':
                      print("Thank you for using our application.Goodbye. ")
                 break
