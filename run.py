@@ -164,7 +164,7 @@ def main():
 
                 elif short_code == 'ex':
                      print("Thank you for using our application.Goodbye. ")
-                break
+                
 
             else:
                 print("Please chose a path you want to follow") 
