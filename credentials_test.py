@@ -52,5 +52,17 @@ class TestCredential(unittest.TestCase):
 
         credential_exists = Credentials.credential_exist("123")    
 
+    def test_delete_credentials(self):
+
+        self.new_credential.save_credentials()
+        test_credential = Credentials("chege","123","chege@gmail.com")
+        test_credential.save_credentials()
+
+        self.new_credential.delete_credentials()
+        self.assertEqual(len(Credentials.credentials_list),1)
+
+
+            
+
 if __name__ == '__main__':
     unittest.main()    
