@@ -134,7 +134,7 @@ def main():
                         print('\n')
 
                         for Credentials in display_credentials():
-                            print(f"{Credentials.username} {Credentials.Email} {Credentials.password}")
+                            print(f"{Credentials.username} {Credentials.email} {Credentials.password}")
 
                     else:
                         print("No user accounts found") 
@@ -156,6 +156,7 @@ def main():
                 elif short_code == 'del':
                     print("Please enter the username of the account you want to delete")  
                     delete = input()
+
                     if check_existing_credentials(delete):
                         get_delete =  delete_selected_credentials(delete)
                         print(f"{get_delete.delete} has been deleted")
@@ -164,8 +165,8 @@ def main():
 
                 elif short_code == 'ex':
                      print("Thank you for using our application.Goodbye. ")
+                     
                 
-
             else:
                 print("Please chose a path you want to follow") 
                    
